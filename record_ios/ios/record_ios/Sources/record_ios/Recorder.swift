@@ -141,6 +141,7 @@ class Recorder {
   func setAudioSessionCategory(_ category: AVAudioSession.Category, options: AVAudioSession.CategoryOptions) throws {
     let audioSession = AVAudioSession.sharedInstance()
     try audioSession.setCategory(category, options: options)
+    try audioSession.setAllowHapticsAndSystemSoundsDuringRecording(true)
   }
 
   private func updateState(_ state: RecordState) {
